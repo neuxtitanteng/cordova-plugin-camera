@@ -1263,7 +1263,8 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
                 byte[] code = jpeg_data.toByteArray();
                 byte[] output = Base64.encode(code, Base64.NO_WRAP);
                 String js_out = new String(output);
-                this.callbackContext.success(js_out);
+                // NEUX: simulate get base64 string & save to SQLITE and not return via js
+                this.callbackContext.success("test_replaced_base64");
                 js_out = null;
                 output = null;
                 code = null;
